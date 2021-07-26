@@ -7,6 +7,8 @@ import Button from 'react-bootstrap/Button';
 
 
 
+
+
 class HornedBeast extends React.Component {
 
     constructor(props) {
@@ -26,7 +28,7 @@ class HornedBeast extends React.Component {
     render() {
         return (
 
-
+            <section>
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title>{this.props.title}</Card.Title>
@@ -39,6 +41,7 @@ class HornedBeast extends React.Component {
                 </Card.Body>
                 <Button variant="primary">Go Somewhere</Button>{' '}
             </Card>
+            </section>
 
             // <div>
             // <h2>
