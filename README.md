@@ -74,6 +74,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 I got help from:
-1. khair
-2. qusai
-3. mohammed zobi
+1. mohammed zoubi
+2. khair
+3. qusai

@@ -1,26 +1,26 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class HornedBeasts extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
-            numberOfVotes : 0
+            noOfvotes : 0
         };
     }
 
-    votesHandler = () =>{
+    ratingModal = () =>{
         this.setState({
-            numberOfVotes: this.state.numberOfVotes + 1
+            noOfvotes: this.state.noOfvotes + 1
         })
     }
 
-    sendDataToModal = () => {
-        this.props.modalHandler(this.props.title, this.props.imageUrl, this.props.description, true);
+    sendToModal = () => {
+        this.props.modalHandler(this.props.title, this.props.image_Url, this.props.description, true);
     }
 
     render(){
@@ -29,18 +29,18 @@ class HornedBeasts extends React.Component{
                 <Col>
                     <Card 
                         style={{ width: '18rem', height: '32rem' , marginBottom: '1.5rem'}}
-                        onClick={this.votesHandler}
+                        onClick={this.ratingModal}
                         >
                         <Card.Img 
                             style={{width: '100%', height: '50%'}}
-                            onClick={this.sendDataToModal}
+                            onClick={this.sendToModal}
                             variant="top" 
-                            src={this.props.imageUrl} 
+                            src={this.props.image_Url} 
                         />
                         <Card.Body>
                             <Card.Title>{this.props.title}</Card.Title>
                             <Card.Text>
-                            ❤ {this.state.numberOfVotes}
+                            ❤ {this.state.noOfvotes}
                             </Card.Text>
                             <Card.Footer>{this.props.description}</Card.Footer>
                             <Button variant="primary">Go somewhere</Button>
