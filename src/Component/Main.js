@@ -36,7 +36,7 @@ class Main extends React.Component {
             <>
                 <TheForms filtering={this.filtering}/>
                 <Container>
-                    <Row xs={1} md={3} className='justify-content-center'>
+                    <Row xs={2} md={4} className='justify-content-center'>
                         {
                             this.props.beastList.filter(bestObj => 
                                 this.state.filterhorns === -5
