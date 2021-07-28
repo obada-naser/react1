@@ -5,21 +5,49 @@ import HornedBeasts from './HornedBeasts';
 import { Container } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 
+import TheForms from './TheForms';
 
 
-class Main extends React.Component{
+class Main extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            filterhorns: -5
+
+        }
+    }
+
+
+
+    filtering = (filterhorns) => {
+        this.setState({
+            filterhorns:filterhorns,
+        });
+    }
+
+
+
+
+
+
     render(){
         return(
             <>
+                <TheForms filtering={this.filtering}/>
                 <Container>
-                    <Row xs={1} md={4} className='justify-content-center'>
+                    <Row xs={1} md={3} className='justify-content-center'>
                         {
-                            this.props.beastList.map(element => {
+                            this.props.beastList.filter(bestObj => 
+                                this.state.filterhorns === -5
+                                ? true
+                                : bestObj.horns === this.state.filterhorns)
+                            .map(element => {
                                 return <HornedBeasts 
-            
-                                            image_Url={element.image_url} title={element.title}description={element.description}modalHandler={this.props.modalHandler}
-                                            
-                                            
+                                            image_Url={element.image_url}
+                                            title={element.title}
+                                            description={element.description}
+                                            modalHandler={this.props.modalHandler}
                                         />
                             })
                         }
@@ -29,5 +57,6 @@ class Main extends React.Component{
         );
     }
 }
+
 
 export default Main;
