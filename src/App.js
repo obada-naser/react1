@@ -6,6 +6,8 @@ import SelectedBeast from './Component/SelectedBeast';
 import Data from './Component/assets/Data.json';
 
 
+
+
 class App extends React.Component{
   constructor(props){
     super(props);
@@ -14,6 +16,7 @@ class App extends React.Component{
       image_Url: 'n',
       description: 'dis',
       showing: false,
+
     };
   }
 
@@ -33,10 +36,16 @@ class App extends React.Component{
       });
   }
 
+ 
+  // filteringData=title=>{
+    
+  // }
+
 
   render(){
     return(
       <>
+
         <SelectedBeast 
           title={this.state.title}
           image_Url={this.state.image_Url}
@@ -46,7 +55,9 @@ class App extends React.Component{
 
         />
         <Header />
+       
         <Main 
+
           beastList={Data}
           modalHandler={this.modalHandler}/>
         <Footer />
